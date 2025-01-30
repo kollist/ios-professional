@@ -7,7 +7,7 @@ xcuserdata/
 
 ## Obj-C/Swift specific
 *.hmap
-
+.DB_Store
 ## App packaging
 *.ipa
 *.dSYM.zip
