@@ -10,7 +10,6 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    
     let loginViewController = LoginViewController()
     let onBoardingContainerViewController = OnboardingContainerViewController()
     let dummyViewController = DummyViewController()
@@ -28,13 +27,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: LoginViewControllerDelegate {
     func didLogin() {
-        self.setRootViewController(onBoardingContainerViewController)
+        if (LocalState.hasOnboarded) {
+            self.setRootViewController(dummyViewController)
+        } else {
+            self.setRootViewController(onBoardingContainerViewController)
+        }
     }
 }
 
 extension AppDelegate: OnboardingContainerViewControllerDelegate {
     func didFinishOnBoarding() {
         self.setRootViewController(dummyViewController)
+        LocalState.hasOnboarded = true
     }
 }
 

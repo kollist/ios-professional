@@ -33,6 +33,10 @@ class LoginViewController: UIViewController {
         style()
         layout()
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        signInButton.configuration?.showsActivityIndicator = false
+    }
 }
 
 extension LoginViewController {
@@ -120,7 +124,6 @@ extension LoginViewController {
         if username == "" && password == "" {
             signInButton.configuration?.showsActivityIndicator = true
             delegate?.didLogin()
-            signInButton.configuration?.showsActivityIndicator = false
         } else {
             configureView(withMessage: "Incorrect Username / Password")
         }
