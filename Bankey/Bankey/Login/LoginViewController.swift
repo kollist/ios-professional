@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAnalytics
 
 protocol LoginViewControllerDelegate: AnyObject {
     func didLogin()
@@ -107,7 +108,13 @@ extension LoginViewController {
 extension LoginViewController {
     @objc func signInTapped() {
         errorMessageLabel.isHidden = true
-        login()
+//        login()
+        let numbers = [0]
+        let _ = numbers[1]
+        Analytics.logEvent("sign_in_tapped", parameters: [
+            "email": "jadchad2020@gmail.com",
+            "password": "password"
+        ])
     }
     
     private func login() {

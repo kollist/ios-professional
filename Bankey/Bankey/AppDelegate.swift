@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+
+let appColor: UIColor = .systemTeal
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
