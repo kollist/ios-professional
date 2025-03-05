@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         onBoardingContainerViewController.delegate = self
         dummyViewController.delegate = self
         self.window?.rootViewController = loginViewController
+        Firebase.configure()
         return true
     }
 }
