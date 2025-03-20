@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Firebase
 
 let appColor: UIColor = .systemTeal
 
@@ -16,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let loginViewController = LoginViewController()
     let onBoardingContainerViewController = OnboardingContainerViewController()
     let dummyViewController = DummyViewController()
+    let mainViewController = MainViewController()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loginViewController.delegate = self
         onBoardingContainerViewController.delegate = self
         dummyViewController.delegate = self
-        self.window?.rootViewController = loginViewController
-        Firebase.configure()
+        self.window?.rootViewController = mainViewController
+        mainViewController.selectedIndex = 2
         return true
     }
 }
