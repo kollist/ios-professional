@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loginViewController.delegate = self
         onBoardingContainerViewController.delegate = self
         dummyViewController.delegate = self
-        self.window?.rootViewController = mainViewController
+        self.window?.rootViewController = AccountSummaryViewController()
         mainViewController.selectedIndex = 2
         return true
     }
