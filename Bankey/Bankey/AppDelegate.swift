@@ -68,3 +68,9 @@ extension AppDelegate {
                           completion: nil)
     }
 }
+
+extension Decimal {
+    var doubleValue: Double {
+        return NSDecimalNumber(decimal:self).doubleValue
+    }
+}
